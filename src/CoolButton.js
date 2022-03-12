@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
-
+import classNames from "classnames";
 // const useStyles = makeStyles({
 //   buttonStyle: { color: (props) => (props.cool ? "blue" : "yellow") }
 // });
@@ -16,23 +16,27 @@ import { makeStyles } from "@material-ui/core/styles";
 // });
 //apply theem
 const useStyles = makeStyles((theme) => ({
-  buttonStyle: (props) => {
+  buttonText: (props) => {
     return {
-      color: props.cool ? "red" : "yellow",
+      color: props.cool ? "white" : "yellow",
       [theme.breakpoints.up("sm")]: { color: "cyan" },
       backgroundColor: props.cool ? "orange" : "green"
     };
+  },
+  buttonBackground: {
+    backgroundColor: "red"
   }
 }));
-
-const CoolButton = (props) => {
+// apply two className to a component
+export default function Hook(props) {
   const classes = useStyles(props);
 
   return (
-    <Button fullWidth className={classes.buttonStyle}>
+    <Button
+      fullWidth
+      className={classNames(classes.buttonText, classes.buttonBackground)}
+    >
       Cool button
     </Button>
   );
-};
-
-export default CoolButton;
+}
