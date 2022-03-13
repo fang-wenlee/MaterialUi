@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
+
 // const useStyles = makeStyles({
 //   buttonStyle: { color: (props) => (props.cool ? "blue" : "yellow") }
 // });
@@ -20,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
     return {
       color: props.cool ? "white" : "yellow",
       [theme.breakpoints.up("sm")]: { color: "cyan" },
-      backgroundColor: props.cool ? "orange" : "green"
+      backgroundColor: props.cool ? "orange" : "green",
+      borderRadius: "20px"
     };
   },
   buttonBackground: {
@@ -33,7 +35,7 @@ export default function Hook(props) {
 
   return (
     <Button
-      fullWidth
+      size="large"
       className={classNames(classes.buttonText, classes.buttonBackground)}
     >
       Cool button
