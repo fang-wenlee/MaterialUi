@@ -30,7 +30,7 @@ export const OutlinedButton = () => {
 
 export const TextButton = () => {
   return (
-    <Button color="primary" variant="outlined">
+    <Button color="secondary" variant="outlined">
       Regular Text Button
     </Button>
   );
