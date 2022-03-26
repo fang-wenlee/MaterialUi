@@ -27,3 +27,11 @@ export const OutlinedButton = () => {
     </Button>
   );
 };
+
+export const TextButton = () => {
+  return (
+    <Button color="primary" variant="outlined">
+      Regular Text Button
+    </Button>
+  );
+};
