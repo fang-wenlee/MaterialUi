@@ -1,11 +1,14 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
-// import { makeStyles } from "@material-ui/core/styles";
+import { Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
-//const useStyles = makeStyles(theme=>({ })
+const useStyles = makeStyles({
+  buttonStyle: {
+    color: "orange"
+  }
+});
 
 export const ContainButton = () => {
-  // const classes = useStyles();
   return (
     <Button
       variant="contained"
@@ -20,7 +23,6 @@ export const ContainButton = () => {
 };
 
 export const OutlinedButton = () => {
-  // const classes = useStyles();
   return (
     <Button variant="outlined" size="large" color="secondary">
       More Button
@@ -29,8 +31,13 @@ export const OutlinedButton = () => {
 };
 
 export const TextButton = () => {
+  const classes = useStyles();
   return (
-    <Button color="secondary" variant="outlined">
+    <Button
+      className={classes.buttonStyle}
+      color="secondary"
+      variant="outlined"
+    >
       Regular Text Button
     </Button>
   );

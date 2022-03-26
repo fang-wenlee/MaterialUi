@@ -3,17 +3,25 @@ import "./styles.css";
 //import Button from "./CoolButton";
 import { TextButton } from "./Buttons";
 import { Typography } from "@material-ui/core";
-// import { IconLabelButtons } from "./IconButtons";
-//import Stack from "@mui/material/Stack";
+import { makeStyles } from "@material-ui/core/styles";
 
-//import {Button} from "@material-ui/core";
+const useStyle = makeStyles({
+  IntroductionStyle: {
+    fontStyle: "oblique"
+  }
+});
 
 export default function App() {
+  const classes = useStyle();
   // const cool = true;
   return (
     <div className="App">
       <h1>Material Ui</h1>
-      <Typography variant="h2" color="primary">
+      <Typography
+        variant="h2"
+        color="primary"
+        className={classes.IntroductionStyle}
+      >
         Introduction
       </Typography>
       <TextButton />
