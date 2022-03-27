@@ -2,11 +2,37 @@ import React from "react";
 import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
-  buttonStyle: {
-    color: (props) => (props.cool ? "blue" : "red")
+//pass them to makeStyle
+
+// const useStyles = makeStyles((theme) => ({
+//   buttonStyle: {
+//     color: "red",
+//     [theme.breakpoints.up("sm")]: {
+//       color: "white",
+//       backgroundColor: "gray"
+//     }
+//   }
+// }));
+
+// const useStyles = makeStyles({
+//   buttonStyle: {
+//     color: (props) => (props.cool ? "blue" : "red")
+//   }
+// });
+
+const useStyles = makeStyles((theme) => ({
+  buttonStyle: (props) => {
+    return {
+      color: props.cool ? "blue" : "red",
+      [theme.breakpoints.up("sm")]: {
+        //Apply breakpoints to style with theme
+        color: "white",
+        width: "100%"
+      },
+      backgroundColor: props.cool ? "orange" : "yellow"
+    };
   }
-});
+}));
 
 export const ContainButton = () => {
   return (
