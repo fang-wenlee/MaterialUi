@@ -4,7 +4,7 @@ import "./styles.css";
 import { TextButton } from "./Buttons";
 import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-
+import ContainedButtons from "./Buttons/contained.button";
 const useStyle = makeStyles({
   IntroductionStyle: {
     fontStyle: "oblique"
@@ -17,6 +17,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>Material Ui</h1>
+      <ContainedButtons />
       <Typography
         variant="h2"
         color="primary"
