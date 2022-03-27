@@ -1,7 +1,9 @@
 import React from "react";
 import { Button } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
 import { makeStyles } from "@material-ui/core/styles";
 import classnames from "classnames";
+
 //pass them to makeStyle
 
 // const useStyles = makeStyles((theme) => ({
@@ -69,6 +71,7 @@ export const TextButton = (props) => {
       className={classnames(classes.buttonText, classes.buttonBackground)}
       color="secondary"
       variant="outlined"
+      endIcon={<DeleteIcon />}
     >
       Regular Text Button
     </Button>
