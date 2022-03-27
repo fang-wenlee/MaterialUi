@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   buttonStyle: {
-    color: "orange"
+    color: (props) => (props.cool ? "blue" : "red")
   }
 });
 
@@ -30,8 +30,10 @@ export const OutlinedButton = () => {
   );
 };
 
-export const TextButton = () => {
-  const classes = useStyles();
+export const TextButton = (props) => {
+  //condiction style: passing props to makeStyle
+  const classes = useStyles(props);
+  console.log("textbutton", props);
   return (
     <Button
       className={classes.buttonStyle}

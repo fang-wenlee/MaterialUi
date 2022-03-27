@@ -5,17 +5,24 @@ import Button from "@material-ui/core/Button";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
+      //means that every direct descendant element of the class root will have those styles applied to it, but the elements inside those will not
       margin: theme.spacing(1)
     }
+  },
+  buttonStyle: {
+    color: (props) => (props.cool ? "green" : "purple")
   }
 }));
 
-export default function ContainedButtons() {
-  const classes = useStyles();
-
+export default function ContainedButtons(props) {
+  const classes = useStyles(props);
+  // the first button depend on props value
+  console.log(props);
   return (
     <div className={classes.root}>
-      <Button variant="contained">Default</Button>
+      <Button variant="outlined" className={classes.buttonStyle}>
+        makeStyles
+      </Button>
       <Button variant="contained" color="primary">
         Primary
       </Button>

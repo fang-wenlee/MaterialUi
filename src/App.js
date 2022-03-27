@@ -1,31 +1,35 @@
 import React from "react";
 import "./styles.css";
 //import Button from "./CoolButton";
-import { TextButton } from "./Buttons";
+import { TextButton } from "./Buttons/Buttons";
 import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ContainedButtons from "./Buttons/contained.button";
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
   IntroductionStyle: {
-    fontStyle: "oblique"
+    fontStyle: "oblique",
+    color: "green"
+  },
+  textStyle: {
+    backgroundColor: "yellow",
+    colro: "blue"
   }
-});
+}));
 
 export default function App() {
   const classes = useStyle();
-  // const cool = true;
+  const cool = true;
   return (
     <div className="App">
       <h1>Material Ui</h1>
-      <ContainedButtons />
-      <Typography
-        variant="h2"
-        color="primary"
-        className={classes.IntroductionStyle}
-      >
+      <ContainedButtons cool={cool} />
+
+      <Typography variant="h4" className={classes.IntroductionStyle}>
         Introduction
       </Typography>
-      <TextButton />
+
+      <TextButton cool={cool} />
+      <h2 className={classes.textStyle}> hello</h2>
 
       {/* <div style={{ marginRight: "20px" }}>
         <CoolButton cool={true} />
